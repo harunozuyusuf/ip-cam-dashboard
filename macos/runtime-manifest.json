@@ -1,0 +1,16 @@
+[
+  {
+    "arch": "aarch64",
+    "name": "OpenJDK21U-jre_aarch64_mac_hotspot_21.0.12.1_1.tar.gz",
+    "size": 48144965,
+    "checksum": "dec50fc6f9fcd4fe3ae8cabf5a5fa68f6afc48841f7698e468e9aa5d54beed84",
+    "link": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_aarch64_mac_hotspot_21.0.12.1_1.tar.gz"
+  },
+  {
+    "arch": "x64",
+    "name": "OpenJDK21U-jre_x64_mac_hotspot_21.0.12.1_1.tar.gz",
+    "size": 42131876,
+    "checksum": "6717ec641fd9ce0bb209ca083ee23b42202ac68cb6fcc5753496e0e4a0f41989",
+    "link": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_mac_hotspot_21.0.12.1_1.tar.gz"
+  }
+]

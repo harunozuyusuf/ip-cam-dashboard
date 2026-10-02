@@ -7,6 +7,7 @@
 !/baselines/
 !/src/
 !/installer/
+!/macos/
 
 # Never commit live camera data or credentials.
 **/data/

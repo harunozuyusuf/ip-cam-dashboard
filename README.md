@@ -7,6 +7,10 @@ Geliştirme tabanı: **J.3.3 Windows TR/EN DAYRESET EVENTLOG**.
 Windows kurulum projesi ve RJ45 simgesi [`installer`](installer) klasöründedir.
 Derleme, geçiş ve doğrulama bilgileri [kurulum notlarında](installer/README.md) yer alır.
 
+Intel ve Apple Silicon için Java 21 içeren ayrı macOS ZIP'i
+[`macos/releases`](macos/releases) klasöründedir.
+Mac kullanım ve doğrulama sınırları [Mac notlarında](macos/README_MAC.txt) açıklanır.
+
 ## Referans paket
 
 Kaynaklar, testler, sürüm notları ve Java 21 runtime içeren Windows ZIP'i
