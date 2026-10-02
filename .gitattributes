@@ -4,4 +4,9 @@
 *.md text eol=lf
 *.cjs text eol=lf
 *.zip binary
+*.ico binary
+*.png binary
+*.svg text eol=lf
+*.ps1 text eol=crlf
+*.iss text eol=crlf
 *.sha256 text eol=lf

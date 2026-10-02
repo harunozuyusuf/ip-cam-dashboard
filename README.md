@@ -4,6 +4,9 @@ Windows için IP kamera ve NVR/sunucu izleme uygulaması.
 
 Geliştirme tabanı: **J.3.3 Windows TR/EN DAYRESET EVENTLOG**.
 
+Windows kurulum projesi ve RJ45 simgesi [`installer`](installer) klasöründedir.
+Derleme, geçiş ve doğrulama bilgileri [kurulum notlarında](installer/README.md) yer alır.
+
 ## Referans paket
 
 Kaynaklar, testler, sürüm notları ve Java 21 runtime içeren Windows ZIP'i

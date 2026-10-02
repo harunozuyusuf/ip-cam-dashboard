@@ -1,0 +1,22 @@
+IP Kamera Monitor — J.3.3 DAYRESET EVENTLOG
+
+Kurulum mevcut Windows kullanıcısı için yapılır; yönetici yetkisi ve ayrıca Java kurulumu gerekmez.
+Masaüstü ve Başlat menüsü kısayolları oluşturulur.
+
+TAŞINABİLİR ZIP SÜRÜMÜNDEN GEÇİŞ
+1. Eski uygulamayı DURDUR_WINDOWS.bat ile durdurun.
+2. Kurulumu tamamlayın; son ekrandaki programı başlat seçimini kaldırın.
+3. Eski program klasörünüzdeki data klasörünü kurulum klasörüne kopyalayın.
+4. Masaüstündeki IP Kamera Monitor kısayolunu açın.
+Varsayılan konum: %LOCALAPPDATA%\Programs\IP Kamera Monitor
+Hedefte zaten data varsa üzerine yazmadan önce mevcut verinin kopyasını saklayın.
+
+Aynı klasöre sonraki kurulumlar data klasörünü değiştirmez.
+Program kaldırıldığında kamera kayıtları, ayarlar ve loglar data klasöründe kalır.
+G/A/Y tarih biçimi, TR/EN FIXED ve olay bazlı log davranışı korunur.
+
+INSTALLATION
+Installs for the current Windows user with the bundled Java runtime.
+When migrating from the portable version, stop the old application and copy
+its data folder into the installation directory before the first launch.
+Existing data is preserved during upgrades and uninstall.

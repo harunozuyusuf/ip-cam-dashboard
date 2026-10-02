@@ -6,6 +6,7 @@
 !/PROJECT_STATUS.md
 !/baselines/
 !/src/
+!/installer/
 
 # Never commit live camera data or credentials.
 **/data/
