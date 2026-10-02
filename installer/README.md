@@ -1,5 +1,9 @@
 # Windows setup ve RJ45 simgesi
 
+Hazır kurulum: [IPCameraMonitor-J.3.3-EVENTLOG-Setup.exe](releases/IPCameraMonitor-J.3.3-EVENTLOG-Setup.exe)
+([SHA-256](releases/IPCameraMonitor-J.3.3-EVENTLOG-Setup.exe.sha256)).
+Bu dosya aşağıdaki test sınırı geçerli olan 02/10/2026 derlemesidir.
+
 Kurulum, güncel `src` kaynaklarından uygulamayı derler ve korunan referans
 ZIP'ten Windows Java 21 runtime dosyalarını alır. Kullanıcı verileri pakete
 eklenmez. Yönetici yetkisi istemeyen kullanıcı başına kurulum yapılır.

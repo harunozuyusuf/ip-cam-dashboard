@@ -4,6 +4,7 @@
 *.md text eol=lf
 *.cjs text eol=lf
 *.zip binary
+*.exe binary
 *.ico binary
 *.png binary
 *.svg text eol=lf
