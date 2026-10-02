@@ -1,0 +1,15 @@
+# Track only the preserved reference and project documentation.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/PROJECT_STATUS.md
+!/baselines/
+
+# Never commit live camera data or credentials.
+**/data/
+**/credentials.json
+**/system_mail.key
+**/.env
+**/*.class
+**/runtime/

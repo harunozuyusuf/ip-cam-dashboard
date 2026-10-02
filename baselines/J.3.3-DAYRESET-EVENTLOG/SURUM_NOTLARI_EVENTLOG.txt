@@ -1,0 +1,43 @@
+IP Kamera Monitor J.3.3 Windows TR/EN DAYRESET EVENTLOG
+23/09/2026
+
+Bu paket, paylaşılan DAYRESET paketinin olay bazlı log sürümüdür.
+
+- Başarılı veya başarısız her ping için tekrar eden kayıt yazılmaz.
+- İlk ONLINE tespiti, ONLINE/OFFLINE değişimleri, 60 saniyelik OFFLINE
+  uyarısı, NVR/sunucu arızası ve iyileşmesi kaydedilir.
+- Mail gönderim başarısı/başarısızlığı, DAY_RESET, sistem hataları,
+  kamera ekleme/düzenleme/silme/aktif-pasif işlemleri, ayar değişiklikleri,
+  izleme başlatma/durdurma, Excel içe aktarma ve yedek işlemleri kaydedilir.
+- 1 dakika uyarısı aynı kesinti için tekrar tekrar yazılmaz; uyarı durumu
+  yeniden başlatmalar arasında saklanır. DAY_RESET yeni gün sayacını korur.
+- Loglar data/logs/events_YYYY-MM-DD.tsv dosyalarına yazılır.
+  Kayıt içindeki tarih/saat G/A/Y SS:DD:SS biçimindedir.
+  Dosya adındaki ISO tarih, sıralama ve otomatik bakım içindir.
+- Önceki günlerin logları açılışta ve en geç bir dakikalık bakım döngüsünde
+  ZIP yapılır. Arşiv doğrulandıktan sonra kaynak TSV kaldırılır.
+- Tarihi bugünden 30 günden eski olan günlük loglar ve ZIP arşivleri silinir.
+  Tam 30 günlük dosya korunur; 31 günlük dosya silinir.
+  Program kapalıyken işlem yapılamaz; sonraki açılışta bakım uygulanır.
+- Eski data/events.tsv, kayıt tarihine göre legacy_events günlüklerine
+  taşınır. Eski ping günlükleri de aynı sıkıştırma/silme kuralına dahildir.
+  Geçersiz eski kayıt varsa kaynak dosya korunur ve hata kaydedilir.
+- Bugünkü Log günlük olayları, Olaylar saklanan olay geçmişini gösterir.
+  Excel indirmeleri aynı olay sütunlarını kullanır. Eski ping arşivleri
+  diskte tutulur, yeni olay geçmişine ping satırları olarak eklenmez.
+- TR/EN FIXED dil kodu, G/A/Y tarih biçimi, DAY_RESET davranışı korunur.
+- İptal edilen sorunlu-kamera filtresi değişikliği bu pakete dahil değildir.
+
+KULLANIM
+ZIP'i ayrı bir klasöre açın. BASLAT_WINDOWS.bat ile başlatın.
+Önceki uygulamayı durdurduktan sonra mevcut data klasörünüzü yeni paket
+klasörüne kopyalayarak kamera/ayar/geçmiş verilerinizi taşıyabilirsiniz.
+Kaynak ZIP değiştirilmemiştir. Gömülü Windows Java 21 runtime korunmuştur.
+
+TEST SINIRI
+51 izole Java kontrolü ve arayüz kodu/olay gösterim kontrolleri başarılıdır.
+Bu ortamda Java yerel ağ bağlantısı açılamadığı için HTTP istemcisi test
+kopyasında devre dışı bırakılmış, istek/yanıt katmanı taklit edilmiştir.
+Dağıtılan kaynak ve JAR bu test değişikliğini içermez.
+Gerçek Windows başlatma, fiziksel kamera ve başarılı SMTP gönderimi bu
+ortamda doğrulanamamıştır. Testlerde gerçek e-posta gönderilmemiştir.

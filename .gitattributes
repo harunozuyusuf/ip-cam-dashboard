@@ -1,0 +1,7 @@
+* text=auto
+*.java text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.cjs text eol=lf
+*.zip binary
+*.sha256 text eol=lf

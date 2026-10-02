@@ -1,0 +1,26 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const file='eventlog-work/ip_kamera_monitor_J_3_3_WINDOWS/ui.html';
+const html=fs.readFileSync(file,'utf8');
+const original=fs.readFileSync('filter-fix/ip_kamera_monitor_J_3_3_WINDOWS/ui.html','utf8');
+const scripts=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+scripts.forEach(s=>new vm.Script(s));
+assert.equal(scripts[1],[...original.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)][1][1],'TR/EN FIXED script unchanged');
+assert.equal(html,fs.readFileSync('eventlog-work/ip_kamera_monitor_J_3_3_WINDOWS/src/ui.html','utf8'));
+const nodes={};const get=id=>nodes[id]??={value:'',classList:{add(){},remove(){},contains(){return false},toggle(){}},addEventListener(){}};
+const context=vm.createContext({document:{getElementById:get,addEventListener(){}},fetch:()=>new Promise(()=>{}),setInterval(){},setTimeout(){},location:{},localStorage:{getItem(){return null}}});
+vm.runInContext(scripts[0],context);
+const event={ts:'23/09/2026 10:00:00',name:'<Camera>',ip:'127.0.0.1',server:'NVR',event_type:'OFFLINE_ALERT',old_status:'ONLINE',new_status:'OFFLINE',duration_seconds:60,details:'Test & details'};
+const calls=[];context.fetch=async url=>{calls.push(url);return {json:async()=>({total:1,rows:[event]})}};
+(async()=>{
+ await vm.runInContext('openLog()',context);
+ assert.equal(calls.pop(),'/api/log-preview');assert.equal(get('mtitle').textContent,'Bugünkü Log');
+ assert.equal((get('mh').innerHTML.match(/<th>/g)||[]).length,9);
+ assert.equal((get('mb').innerHTML.match(/<td>/g)||[]).length,9);
+ assert.ok(get('mb').innerHTML.includes('OFFLINE_ALERT'));assert.ok(get('mb').innerHTML.includes('&lt;Camera&gt;'));
+ get('mdl').onclick();assert.equal(context.location.href,'/api/log');
+ await vm.runInContext('openEvents()',context);assert.equal(calls.pop(),'/api/events-preview');
+ assert.equal(get('mtitle').textContent,'Olaylar');get('mdl').onclick();assert.equal(context.location.href,'/api/events');
+ context.fetch=async()=>({json:async()=>({total:0,rows:[]})});await vm.runInContext('openLog()',context);
+ assert.ok(get('mb').innerHTML.includes('colspan="9"'));
+ console.log('PASS: UI script syntax, unchanged TR/EN FIXED, daily/history rendering, escaping, export links, empty state.');
+})().catch(e=>{console.error(e);process.exitCode=1});
