@@ -24,8 +24,9 @@ dosyasında kayıtlıdır.
 
 ## Kaynak ve testler
 
-Java kaynak dosyası ve arayüz `baselines/J.3.3-DAYRESET-EVENTLOG/src`
-altındadır. Testler referans olarak saklanmıştır; testlerdeki önceki çalışma
+Türkçe açıklamalı güncel Java kaynak dosyası ve arayüz [`src`](src)
+altındadır. Yeni geliştirmeler bu klasörde yapılır; `baselines` altındaki
+orijinal kaynak ve paket korunur. Testler referans olarak saklanmıştır; testlerdeki önceki çalışma
 klasörü yolları yeni ortamda uyarlanmalıdır.
 
 Önceki doğrulamada 51 izole Java kontrolü ve arayüz kontrolleri geçmiştir.

@@ -5,6 +5,7 @@
 !/README.md
 !/PROJECT_STATUS.md
 !/baselines/
+!/src/
 
 # Never commit live camera data or credentials.
 **/data/

@@ -5,6 +5,11 @@
 
 **Güncel referans: J.3.3 Windows TR/EN DAYRESET EVENTLOG**
 
+02/10/2026: Türkçe kod açıklamaları eklenen geliştirme kaynakları `src/`
+klasörüne alındı. Bundan sonraki kod değişiklikleri burada yapılır.
+Bu aşamada uygulama davranışı değiştirilmedi; `baselines/` altındaki
+orijinal kaynaklar ve dağıtım ZIP'i korundu.
+
 - Korunan paket, kaynaklar ve sürüm notları: `baselines/J.3.3-DAYRESET-EVENTLOG/`
 - ZIP: `IPCameraMonitor-J.3.3-Windows-TR-EN-DAYRESET-EVENTLOG.zip`
 - SHA-256: `cdda22f88dbe48a0e22a273a08bbbe562754e8001b0d183d6f0d654b86897f90`
